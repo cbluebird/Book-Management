@@ -9,8 +9,6 @@
 
 class Menu {
 public:
-    void show();
-private:
     static void displayAdminMainMenu();
     static void displayDeleteMenu();
     static void displayUpdateMenu();
@@ -21,7 +19,7 @@ private:
 
     static void cutRule();
 
-    void displaySortUser();
+    static void displaySortUser();
 };
 
 

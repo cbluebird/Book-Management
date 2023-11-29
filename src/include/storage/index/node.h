@@ -20,5 +20,12 @@ public:
     Node();
 };
 
+template<typename KeyType>
+Node<KeyType>::Node(){
+    key= new KeyType[MAX+1];
+    ptr=new Node<KeyType>* [MAX+1];
+    page_id=-1;
+    size=0;
+}
 
 #endif //BOOK_MANAGEMENT_NODE_H

@@ -3,8 +3,6 @@
 //
 
 #include "../include/model/book.h"
-#include <utility>
-#include <regex>
 #include <iostream>
 
 int Book::book_num=0;
@@ -87,7 +85,7 @@ std::istream &operator>>(std::istream &in, Book &right) {
     }
 
     if(typeid(in) == typeid(std::cin)) {
-        std::cout << "请输入该用户的姓名（输入0代表为留空）：";
+        std::cout << "请输入书名的姓名（输入0代表为留空）：";
     }
     in >> right.name;
     if(right.name=="0") {
@@ -128,13 +126,8 @@ std::ostream &operator<<(std::ostream &out, const Book &right) {
             << "书名:" << right.name << '\n'
             << "作者:" << right.author<< "\n"
             << "类别:" << right.type<< '\n'
-            <<(right.state?"借出":"在库中")<< std::endl;
+            << "状态:"<<(right.state?"借出":"在库中")<< std::endl;
     } else {
-//        out << right.user_id;
-//        out<<" "<<right.name;
-//        out<<" "<< right.phone;
-//        out <<" " << right.address;
-//        out<<" "<<right.email;
         out<<right.ID<<" ";
         if(right.name.empty()) {
             out << "0" << " ";

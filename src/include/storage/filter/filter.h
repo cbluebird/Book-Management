@@ -9,12 +9,13 @@
 #include<bitset>
 
 class Filter {
-    uint32_t murmur3(const std::string& key);
-    std::bitset<10000> filter;
+    uint32_t murmur3(const void* key, size_t len, uint32_t seed );
+    static const size_t FILTER_SIZE = 1000;
+    std::bitset<FILTER_SIZE> filter;
     std::hash<std::string> hashFunction;
 public:
-    void set(const std::string& element) ;
-    bool get(const std::string& element) ;
+    void set(int) ;
+    bool get(int) ;
     Filter()=default;
 };
 

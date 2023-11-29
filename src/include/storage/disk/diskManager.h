@@ -7,9 +7,7 @@
 
 
 #include "file.h"
-#include "../../../storage/disk/file.cpp"
 #include "../page/page.h"
-#include "../../../storage/page/page.cpp"
 
 template<typename ValueType,typename KeyType>
 class DiskManager {
